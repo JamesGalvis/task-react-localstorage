@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/* Estilos Generales */
+button {
+  border: none;
+  cursor: pointer;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grow {
+  flex-grow: 1;
+}
+.delete {
+  background: #ef4444d2;
+  color: #c4c4c4;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+.delete:hover {
+  background: #bc3535d2;
+}
+
+/* Estilos para el contenedor padre App */
+.App {
+  color: #c4c4c4;
+  background: #212129;
+  width: 100%;
+  height: 100vh;
+  padding: 5rem 4%;
+}
+
+/* Estilos para el container y el componente TaskCreator */
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+.task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 85%;
+  margin: 0 auto;
+}
+.task-form-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #d1d5dbe2;
+}
+.input-task {
+  background: #d1d5dbe2;
+  font-size: 14px;
+  font-weight: 400;
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  transition: 160ms all ease-in;
+}
+.input-task:focus {
+  outline: 1px solid transparent;
+  box-shadow: 0 0 0 3px #6379dc;
+}
+.create-btn {
+  background: #6379dc;
+  color: #2B2B36;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 60%;
+  padding: 5px;
+  transition: all .3s ease;
+}
+.create-btn:hover {
+  background: #576bc2;
+}
+
+/* Estilos para el componente TasksTable */
+.table__container {
+  margin: 20px 0;
+  padding: 10px 0;
+}
+table {
+  width: 90%;
+  margin: 0 auto;
+}
+.table__title {
+  color: #94a3b8;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 20px 0;
+}
+.table__row-cell {
+  background: #6b72804a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  padding: 10px;
+}
+.table__row-text {
+  color: #e5e7eb9f;
+  font-weight: 400;
+  width: 60%;
+}
+.table__row-input {
+  width: 20px;
+  height: 20px;
+  background: #c8d5de;
+  box-shadow: inset 0 0 10px #717171;
+  cursor: pointer;
+}
+
+/* Estilos para el componente VisibilityTasks */
+.visibility-container {
+  width: 90%;
+  margin: 0 auto;
+}
+.visibility__btn {
+  background: #bd5757;
+}
+.visibility__text {
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+}
+.visibility__switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background: #c8d5de;
+  box-shadow: inset 0 0 10px #717171;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.visibility__switch::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: #f2f2f2;
+  box-shadow: 0 0 5px #717171;
+  top: 0;
+  left: 0;
+  transform: scale(1.1);
+  transition: all .3s ease;
+}
+ .vibility__input {
+  visibility: hidden;
+} 
+ .vibility__input:checked + .visibility__switch {
+  background: #1dd65f;
+}
+.vibility__input:checked + .visibility__switch::after {
+  left: 20px;
+}  
+
+@media screen and (max-width: 500px) { 
+  .App {
+    padding: 5rem 15px;
+  }
+  .task-form {
+    width: 100%;
+  }
+  .input-task {
+    width: 90%;
+  }
+  .visibility-container {
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 20px;
+    background: #2b2b36;
+    box-shadow: inset 0 0 10px #31313F;
+    flex-direction: column;
+  }
+  table {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .visibility__text {
+    padding: 10px 0;
+  }
+}
